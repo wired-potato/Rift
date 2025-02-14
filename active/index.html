@@ -336,6 +336,12 @@
                window.location.href = searchEngine.replace('%s', encodeURIComponent(query));
             }
          });
+
+         document.querySelector('.input').addEventListener('focus', function() {
+  this.style.caretColor = 'transparent';
+  this.style.outline = 'none';
+});
+
       </script>
    </body>
 </html>
