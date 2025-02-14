@@ -11,6 +11,30 @@
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
       <style>
+         
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+
+
+#content h1 {
+  font-size: 48px;
+  text-transform: uppercase;
+  color: #000000;
+  text-shadow: 0 0 10px #ff6e4a, 0 0 20px #ff6e4a;
+  margin-bottom: 30px;
+}
+
+
+
+
         /* From Uiverse.io by 0xnihilism */ 
 .input {
   width: 100%;
@@ -231,16 +255,17 @@
    <body>
       <div id="content">
          <div id="particles-js"></div>
+         <h1>RIFT</h1>
 
          <!-- New Search Bar with Functionality -->
          <form id="uv-form">
             <div class="input-container">
                <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/> 
-               <input id="uv-address" class="input" name="text" type="text" placeholder="Search the internet..."/>
+               <input id="uv-address" class="input" name="text" type="text" placeholder="Open the rift..."/>
             </div>
          </form>
 
-         <p>Thanks To <a href="https://github.com/TheTIW/UV-Static">TIW's UV-Static</a></p>
+      
          <div class="desc left-margin">
             <p id="uv-error"></p>
             <pre id="uv-error-code"></pre>
