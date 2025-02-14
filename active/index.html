@@ -3,6 +3,7 @@
    <head>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Rift</title>
+      <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
       <!--<link rel="stylesheet" href="../../assets/styles/css/global.min.css">-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -20,7 +21,7 @@
       
       
       <div id="content">
-         
+         <div id="particles-js"></div>
          <p>thanks to <a href="https://github.com/TheTIW/UV-Static">TIW's UV-Static</a></p>
 
          <form id="uv-form">
@@ -42,6 +43,37 @@
       <script src="register-sw.js" charset="UTF-8" defer></script>
       <script src="search.js" charset="UTF-8" defer></script>
       <script src="index.js" charset="UTF-8" defer></script>
-      
+
+      <script>
+particlesJS('particles-js', {
+      particles: {
+        number: { value: 75 },
+        color: { value: "#ffffff" },
+        shape: { type: "triangle" },
+        opacity: { value: 1 },
+        size: { value: 2 },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#ffffff",
+          opacity: 0.4,
+          width: 1,
+        },
+        move: {
+          enable: true,
+          speed: 6,
+        },
+      },
+      interactivity: {
+        detect_on: "window",
+        events: {
+          onhover: { enable: false, mode: "repulse" },
+          onclick: { enable: false, mode: "push" },
+        },
+      },
+      retina_detect: true,
+    });
+</script>
    </body>
+   
 </html>
