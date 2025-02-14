@@ -1,0 +1,7 @@
+services:
+  - name: potatoproxy
+    type: web
+    runtime: static
+    env: static
+    publish_path: ./
+    branch: main
