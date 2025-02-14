@@ -1,1 +1,1 @@
-thanks to the guys at pblocker 
+thanks to the guys at pblocker and uv static
