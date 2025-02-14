@@ -1,12 +1,4 @@
-/* Sunset/Dark Theme with Glowy Effects and Particles */
-body {
-  background: linear-gradient(180deg, #d1431e, #120924);
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  font-family: 'Open Sans', sans-serif;
-  overflow: hidden;
-}
+
 
 #particles-js {
   position: fixed;
@@ -17,48 +9,16 @@ body {
   z-index: -1;
 }
 
-#content {
-  text-align: center;
-  padding: 20px;
-  color: #fff;
-  margin-top: 15vh;
-  z-index: 1;
-  position: relative;
-}
+
 
 #content h1 {
   font-size: 48px;
   text-transform: uppercase;
-  color: #ff6e4a;
+  color: #000000;
   text-shadow: 0 0 10px #ff6e4a, 0 0 20px #ff6e4a;
   margin-bottom: 30px;
 }
 
-#searchbar {
-  text-align: center;
-  margin: 0 auto;
-}
 
-.form__input {
-  padding: 15px;
-  border: none;
-  border-radius: 25px;
-  font-size: 18px;
-  width: 400px;
-  box-shadow: 0 0 15px #ff6e4a;
-  background-color: #1f1335;
-  color: #fff;
-  text-align: center;
-  transition: box-shadow 0.3s;
-  display: block;
-  margin: 0 auto;
-}
 
-.form__input:focus {
-  outline: none;
-  box-shadow: 0 0 20px #ff6e4a;
-}
 
-.form__input::placeholder {
-  color: #aa6e9f;
-}
