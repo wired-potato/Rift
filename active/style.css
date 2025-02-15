@@ -178,3 +178,16 @@ body {
 #game-links a:hover {
    color: #00bfff;
 }
+
+#apps-and-games {
+   margin-top: 40px;
+   text-align: center;
+}
+
+#apps-and-games h2 {
+   font-family: "Courier New", monospace;
+   font-size: 28px;
+   color: #ffffff;
+   text-transform: uppercase;
+}
+
