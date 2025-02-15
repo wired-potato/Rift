@@ -1,5 +1,5 @@
 services:
-  - name: potatoproxy
+  - name: rift
     type: web
     runtime: static
     env: static
