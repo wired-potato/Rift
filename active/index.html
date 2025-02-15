@@ -193,70 +193,6 @@ body {
 #game-links a:hover {
    color: #00bfff;
 }
-         /* Browser Tab System */
-#browser-tabs {
-   width: 90%;
-   background: #1d1d1d;
-   border-radius: 8px;
-   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-   margin-top: 20px;
-}
-
-#tab-list {
-   display: flex;
-   list-style: none;
-   padding: 0;
-   border-bottom: 2px solid #333;
-   overflow-x: auto;
-   white-space: nowrap;
-}
-
-.tab {
-   padding: 10px 15px;
-   cursor: pointer;
-   color: #e0e0e0;
-   text-transform: uppercase;
-   background: #333;
-   border-right: 1px solid #444;
-   display: flex;
-   align-items: center;
-}
-
-.tab.active {
-   background: #00bfff;
-   color: #fff;
-}
-
-.tab button.close-tab {
-   background: transparent;
-   border: none;
-   color: #fff;
-   cursor: pointer;
-   margin-left: 10px;
-   font-size: 16px;
-}
-
-.tab button.close-tab:hover {
-   color: #ff4c4c;
-}
-
-.tab-content {
-   display: none;
-   width: 100%;
-   height: 80vh;
-   border: none;
-}
-
-.tab-content.active {
-   display: block;
-}
-
-.tab-frame {
-   width: 100%;
-   height: 100%;
-   border: none;
-}
-
 
       </style>
    </head>
@@ -264,21 +200,6 @@ body {
       <div id="content">
          <div id="particles-js"></div>
          <h1>RIFT</h1>
-         
-         <div id="browser-tabs">
-   <ul id="tab-list">
-      <li class="tab active" data-tab="tab-1">
-         <span>New Tab</span> 
-         <button class="close-tab">&times;</button>
-      </li>
-   </ul>
-   <div id="tab-contents">
-      <div class="tab-content active" id="tab-1-content">
-         <iframe class="tab-frame" src="about:blank"></iframe>
-      </div>
-   </div>
-</div>
-
 
          <!-- New Search Bar with Functionality -->
          <form id="uv-form">
@@ -360,76 +281,5 @@ body {
 });
 
       </script>
-
-      <script>
-// Function to create a new tab
-function createNewTab(url) {
-   const tabId = 'tab-' + Date.now();
-   const tabList = document.querySelector('#tab-list');
-   const tabContents = document.querySelector('#tab-contents');
-
-   // Create new tab
-   const newTab = document.createElement('li');
-   newTab.classList.add('tab');
-   newTab.dataset.tab = tabId;
-   newTab.innerHTML = `<span>${url}</span> <button class="close-tab">&times;</button>`;
-   tabList.appendChild(newTab);
-
-   // Create new tab content with iframe
-   const newContent = document.createElement('div');
-   newContent.classList.add('tab-content');
-   newContent.id = `${tabId}-content`;
-   newContent.innerHTML = `<iframe class="tab-frame" src="${url}"></iframe>`;
-   tabContents.appendChild(newContent);
-
-   // Activate new tab
-   setActiveTab(tabId);
-}
-
-// Function to set the active tab
-function setActiveTab(tabId) {
-   document.querySelectorAll('.tab').forEach(tab => {
-      tab.classList.toggle('active', tab.dataset.tab === tabId);
-   });
-   document.querySelectorAll('.tab-content').forEach(content => {
-      content.classList.toggle('active', content.id === `${tabId}-content`);
-   });
-}
-
-// Event listener for tab switching
-document.querySelector('#tab-list').addEventListener('click', (e) => {
-   if (e.target.classList.contains('close-tab')) {
-      const tab = e.target.parentElement;
-      const tabId = tab.dataset.tab;
-      tab.remove();
-      document.getElementById(`${tabId}-content`).remove();
-
-      // If closing the active tab, activate the last tab
-      if (tab.classList.contains('active')) {
-         const lastTab = document.querySelector('#tab-list .tab:last-child');
-         if (lastTab) setActiveTab(lastTab.dataset.tab);
-      }
-   } else if (e.target.classList.contains('tab') || e.target.parentElement.classList.contains('tab')) {
-      const tab = e.target.closest('.tab');
-      setActiveTab(tab.dataset.tab);
-   }
-});
-
-// Handle form submission to open new tabs
-document.querySelector('#uv-form').addEventListener('submit', function(event) {
-   event.preventDefault();
-   const query = document.querySelector('#uv-address').value;
-   let url;
-   if (query.startsWith('http://') || query.startsWith('https://')) {
-      url = query;
-   } else {
-      const searchEngine = document.querySelector('#uv-search-engine').value;
-      url = searchEngine.replace('%s', encodeURIComponent(query));
-   }
-   createNewTab(url);
-   document.querySelector('#uv-address').value = '';
-});
-
-</script>
    </body>
 </html>
