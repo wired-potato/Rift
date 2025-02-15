@@ -17,12 +17,13 @@ body {
 }
 
 #content {
+   height: auto; /* Allow content to fit naturally */
+   min-height: 100vh;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   height: 100vh;
-   text-align: center;
+   gap: 20px; /* Add spacing between sections */
 }
 
 #content h1 {
@@ -180,7 +181,7 @@ body {
 }
 
 #apps-and-games {
-   margin-top: 80px;
+   margin-top: 20px;
    text-align: center;
 }
 
