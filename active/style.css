@@ -24,14 +24,7 @@ body {
    justify-content: center;
    align-items: center;
    gap: 20px; /* Add spacing between sections */
-}
-
-#content h1 {
-   margin-bottom: 20px;
-   font-family: "Courier New", monospace;
-   font-size: 48px;
-   text-transform: uppercase;
-   color: #ffffff;
+   text-align: center; /* Center child elements like h1 and input */
 }
 
 .input {
@@ -52,6 +45,15 @@ body {
                0 0 80px rgba(255, 0, 255, 0.5);
    backdrop-filter: blur(10px);
 }
+
+#content h1 {
+   margin-bottom: 20px;
+   font-family: "Courier New", monospace;
+   font-size: 48px;
+   text-transform: uppercase;
+   color: #ffffff;
+}
+
 
 .input::placeholder {
    color: #aaa;
