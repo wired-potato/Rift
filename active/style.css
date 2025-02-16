@@ -191,7 +191,7 @@ body {
   color: white;
   text-decoration: none;
   font-size: 24px;
-  font-family: "Bebas Neue", sans-serif;
+  
 }
 
 .right-section {
@@ -203,8 +203,16 @@ body {
   color: white;
   text-decoration: none;
   font-size: 16px;
-  text-decoration: underline;
+ 
 }
+
+.right-section span {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+ 
+}
+
 
 .right-section a:hover {
   opacity: 0.8;
