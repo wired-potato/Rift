@@ -102,7 +102,7 @@ body {
    z-index: 10;
 }
 
-.fa-search:focus {
+.input-container .fa-search:focus {
    transform: scale(1.02);
    z-index: 10;
 }
