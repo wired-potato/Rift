@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+  <title>dinosaur nuggets, 4 sale cheep!</title>
+<body>
+
+    <button onclick="openCloaker()">Open Cloaker</button>
+  
+</body>
+  <script>
+    function openCloaker() {
+      var win = window.open();
+      var url = "https://";
+      var iframe = win.document.createElement('iframe');
+      iframe.style.width = "100%";
+      iframe.style.height = "100%";
+      iframe.style.border = "none";
+      iframe.src = url;
+      win.document.body.style.margin = "0";
+      win.document.body.style.height = "100vh";
+      win.document.body.appendChild(iframe);
+    }
+</script>
+</html>
