@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Education Site</title>
+    <link id="favicon" rel="icon" href="https://example.com/normal-icon.png" type="image/png">
+    <script>
+        function disguiseAsDrive() {
+            // Change title
+            document.title = "Home-Google Drive";
+
+            // Change favicon
+            let favicon = document.getElementById("favicon");
+            favicon.href = "https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png";
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to My Education Site</h1>
+    <a href="#" onclick="disguiseAsDrive()">Click Me</a>
+</body>
+</html>
