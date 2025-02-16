@@ -131,15 +131,21 @@
       </script>
 
 
-      <script>
-function disguiseAsDrive() {
-            // Change title
-            document.title = "Home - Google Drive";
+    <script>
+    function disguiseAsDrive() {
+        // Change title
+        document.title = "Home - Google Drive";
 
-            // Change favicon
-            let favicon = document.getElementById("favicon");
+        // Change existing favicon
+        let favicon = document.querySelector("link[rel~='icon']");
+        if (favicon) {
             favicon.href = "https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png";
         }
+    }
+
+    // Call the function to change the title and favicon
+    disguiseAsDrive();
 </script>
+
    </body>
 </html>
