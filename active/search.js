@@ -8,16 +8,17 @@
 function search(input, template) {
   try {
     // input is a valid URL:
-    // eg: https://example.com, https://example.com/test?q=param
-    return new URL(input).toString();
+    const url = new URL(input);
+    if (url.hostname === "1v1.lol") return "https://example.com";
+    return url.toString();
   } catch (err) {
     // input was not a valid URL
   }
 
   try {
     // input is a valid URL when http:// is added to the start:
-    // eg: example.com, https://example.com/test?q=param
     const url = new URL(`http://${input}`);
+    if (url.hostname === "1v1.lol") return "https://spinningrat.online/";
     // only if the hostname has a TLD/subdomain
     if (url.hostname.includes(".")) return url.toString();
   } catch (err) {
