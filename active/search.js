@@ -9,7 +9,7 @@ function search(input, template) {
   try {
     // input is a valid URL:
     const url = new URL(input);
-    if (url.hostname === "1v1.lol") return "https://example.com";
+    if (url.hostname === "1v1.lol") return "https://spinningrat.online";
     return url.toString();
   } catch (err) {
     // input was not a valid URL
