@@ -9,7 +9,7 @@ function search(input, template) {
   try {
     // input is a valid URL:
     const url = new URL(input);
-    if (url.hostname === "1v1.lol") return "https://spinningrat.online";
+    if (url.hostname.toLowerCase() === "1v1.lol") return "https://spinningrat.online";
     return url.toString();
   } catch (err) {
     // input was not a valid URL
@@ -18,11 +18,11 @@ function search(input, template) {
   try {
     // input is a valid URL when http:// is added to the start:
     const url = new URL(`http://${input}`);
-    if (url.hostname === "1v1.lol") return "https://spinningrat.online/";
+    if (url.hostname.toLowerCase() === "1v1.lol") return "https://spinningrat.online/";
     // only if the hostname has a TLD/subdomain
     if (url.hostname.includes(".")) return url.toString();
   } catch (err) {
-    // input was not valid URL
+    // input was not a valid URL
   }
 
   // input may have been a valid URL, however the hostname was invalid
