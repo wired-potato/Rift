@@ -6,17 +6,19 @@
  * @returns {string} Fully qualified URL
  */
 function search(input, template) {
-  // Regular expression to detect "1v1.lol" in various formats (case insensitive, with spaces or dots)
-  const blockedPattern = /1\s*v\s*1\s*[. ]\s*l\s*o\s*l/i;
+  // More robust pattern to block variations of "1v1.lol"
+  const blockedPattern = /1\s*v\s*1\s*[. ]?\s*l\s*o\s*l/i;
 
-  if (blockedPattern.test(input)) {
+  if (blockedPattern.test(input.replace(/[^a-z0-9]/gi, ""))) {
     return "https://spinningrat.online/";
   }
 
   try {
     // input is a valid URL:
     const url = new URL(input);
-    if (blockedPattern.test(url.hostname)) return "https://spinningrat.online/";
+    if (blockedPattern.test(url.hostname.replace(/[^a-z0-9]/gi, ""))) {
+      return "https://spinningrat.online/";
+    }
     return url.toString();
   } catch (err) {
     // input was not a valid URL
@@ -25,7 +27,9 @@ function search(input, template) {
   try {
     // input is a valid URL when http:// is added to the start:
     const url = new URL(`http://${input}`);
-    if (blockedPattern.test(url.hostname)) return "https://spinningrat.online/";
+    if (blockedPattern.test(url.hostname.replace(/[^a-z0-9]/gi, ""))) {
+      return "https://spinningrat.online/";
+    }
     // only if the hostname has a TLD/subdomain
     if (url.hostname.includes(".")) return url.toString();
   } catch (err) {
